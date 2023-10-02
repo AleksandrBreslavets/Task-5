@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Task_5.MainPage">
+    <ScrollView>
+        <StackLayout>
+            <Label Margin="10" Text="Books" FontSize="Title" HorizontalOptions="Center" />
+
+            <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Text="Name" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" Text="Country of origin" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" Text="Price" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" Text="Description" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="4" HorizontalOptions="Center" Text="Page amount" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="5" HorizontalOptions="Center" Text="Edition" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="6" HorizontalOptions="Center" Text="Author" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="7" HorizontalOptions="Center" Text="Publishing date" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="8"  />
+            </Grid>
+
+            <ListView x:Name="BooksListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Text="{Binding Name}" />
+                                <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" Text="{Binding CountryOrigin}" />
+                                <Label Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" Text="{Binding Price}" />
+                                <Label Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" Text="{Binding Description}" />
+                                <Label Grid.Row="0" Grid.Column="4" HorizontalOptions="Center" Text="{Binding PageAmount}" />
+                                <Label Grid.Row="0" Grid.Column="5" HorizontalOptions="Center" Text="{Binding Edition}" />
+                                <Label Grid.Row="0" Grid.Column="6" HorizontalOptions="Center" Text="{Binding Authors}" />
+                                <Label Grid.Row="0" Grid.Column="7" HorizontalOptions="Center" Text="{Binding DateOfPackage, StringFormat='{0:dd.MM.yyyy}'}" />
+                                <Button Grid.Row="0" Grid.Column="8" HorizontalOptions="Center" BackgroundColor="Green" Text="Додати" HeightRequest="30" WidthRequest="100" Clicked="AddButtonClicked"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Margin="10"  Text="Products" FontSize="Title" HorizontalOptions="Center" />
+
+            <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Text="Name" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" Text="Country of origin" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" Text="Price" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" Text="Description" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="4" HorizontalOptions="Center" Text="Measurement" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="5" HorizontalOptions="Center" Text="Quantity" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="6" HorizontalOptions="Center" Text="Expiration date" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="7" HorizontalOptions="Center" Text="Date of package" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="8" />
+            </Grid>
+
+            <ListView x:Name="ProductsListView" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Text="{Binding Name}" />
+                                <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" Text="{Binding CountryOrigin}" />
+                                <Label Grid.Row="0" Grid.Column="2" HorizontalOptions="Center"  Text="{Binding Price}" />
+                                <Label Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" Text="{Binding Description}" />
+                                <Label Grid.Row="0" Grid.Column="4" HorizontalOptions="Center" Text="{Binding Measurement}" />
+                                <Label Grid.Row="0" Grid.Column="5" HorizontalOptions="Center" Text="{Binding Quantity}" />
+                                <Label Grid.Row="0" Grid.Column="6" HorizontalOptions="Center" Text="{Binding ExpirationDate, StringFormat='{0:dd.MM.yyyy}'}" />
+                                <Label Grid.Row="0" Grid.Column="7" HorizontalOptions="Center" Text="{Binding DateOfPackage, StringFormat='{0:dd.MM.yyyy}'}" />
+                                <Button Grid.Row="0" Grid.Column="8" BackgroundColor="Green" Text="Додати" HeightRequest="30" WidthRequest="100"  Clicked="AddButtonClicked"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Margin="10"  Text="Chosed items" FontSize="Title" HorizontalOptions="Center" />
+
+            <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Text="Name" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" Text="Country of origin" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" Text="Price" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" Text="Description" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="4" HorizontalOptions="Center" Text="Date of package" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="5" />
+            </Grid>
+
+            <ListView x:Name="ChosedListView" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" Text="{Binding Name}" />
+                                <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" Text="{Binding CountryOrigin}" />
+                                <Label Grid.Row="0" Grid.Column="2" HorizontalOptions="Center" Text="{Binding Price}" />
+                                <Label Grid.Row="0" Grid.Column="3" HorizontalOptions="Center" Text="{Binding Description}" />
+                                <Label Grid.Row="0" Grid.Column="4" HorizontalOptions="Center" Text="{Binding DateOfPackage, StringFormat='{0:dd.MM.yyyy}'}" />
+                                <Button Grid.Row="0" Grid.Column="5" BackgroundColor="Red" Text="Видалити" HeightRequest="30" WidthRequest="100"  Clicked="DeleteButtonClicked"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
